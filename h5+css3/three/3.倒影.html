@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 300px;
+				background-image: url(img/001.png);
+				/*margin: 300px auto;*/
+			}
+			/*倒影：方位*/
+			div {
+				/*above 上方 */
+				-webkit-box-reflect: above;
+				/*below 下方 10px 倒影与原图的距离  linear-gradient(用rgba()写颜色) 用来调透明度*/
+				-webkit-box-reflect: below 10px linear-gradient(rgba(0,0,0,0), rgba(255,255,255,1));
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

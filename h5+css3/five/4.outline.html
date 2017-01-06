@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style type="text/css">
+			input {
+				/*outline: red solid 10px;*/
+			}
+			/*1、一般outline应用于的元素是可以获得焦点，并且在获得focus焦点时显示outline*/
+			/*2、outline不属于盒子模型。因此不对布局产生任何影响。只是起强调的视觉效果*/
+			input:focus {
+				/*对input输入框的初始化操作*/
+				/*使得点击时的蓝色没有了*/
+				/*outline: none;*/
+				outline: red solid 10px;
+			}
+			/*3、普通标签也可以设置outline，一般也可以应用于：active状态，强调元素激活状态*/
+			div {
+				width: 200px;
+				height: 200px;
+				border: 1px solid black;
+				/*紧接在border外*/
+				/*outline: 3px auto orange;*/
+			}
+			/*div:active{
+				outline: 3px auto orange;
+			}*/
+			/*4、普通标签一般不具备focus特性,可以借助全局Tabindex来拥有该特性*/
+			div:focus {
+				outline: 3px auto orange;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text"  />
+		<!--<div></div>-->
+		<div tabindex="1"></div>
+	</body>
+</html>

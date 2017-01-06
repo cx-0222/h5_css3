@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 400px;
+				height: 200px;
+				margin: 50px auto;
+				font: normal 30px/200px arial;
+				background-color: cyan;
+				text-align: center;
+				transition: 2s linear;
+			}
+			/*旋转*/
+			div:nth-child(1):hover {
+				/*1、坐标原点默认在元素中心点*/
+				/*2、发生形变后的元素原有位置不变*/
+				/*3、默认运动方向为瞬时针*/
+				transform: rotate(46deg);
+				/*hover后 两秒旋转十圈*/
+				/*此时是沿z轴旋转，z轴不动*/
+				transform: rotate(3600deg);
+			}
+			div:nth-child(2):hover {
+				/*y轴不变，沿Y轴旋转*/
+				/*旋转的是角度 deg*/
+				transform: rotateY(3600deg);
+			}
+			
+			/*缩放*/
+			div:nth-child(3):hover {
+				/*缩放的是倍数，x轴缩放0.5倍*/
+				transform: scaleX(0.5);
+			}
+			div:nth-child(4):hover {
+				/*scale(0.5) ==scale3d(0.5,0.5,0.5){相当于 scaleX(0.5),scaleY(0.5),scaleZ(0.5)}*/
+				transform: scale(0.5);
+				transform: scale3d(0.5,0.5,1);
+			}
+			
+			/*偏移*/
+			div:nth-child(5):hover {
+				/*偏移的是距离*/
+				transform: translateX(100px);
+			}
+			div:nth-child(6):hover {
+				/*x轴偏移量  Y轴偏移量*/
+				transform: translate(100px,100px);
+			}
+			
+			/*倾斜*/
+			div:nth-child(7):hover {
+				/*倾斜的是角度 deg*/
+				/*skewX 表示Y轴正方向向X轴倾斜的角度*/
+				transform: skewX(45deg);
+			}
+			div:nth-child(8):hover {
+				/*倾斜的是角度 deg*/
+				/*skewY 表示X轴正方向向Y轴倾斜的角度*/
+				transform: skewY(45deg);
+			}
+			div:nth-child(9):hover {
+				/*X Y同时倾斜  45deg临界XY轴成一条线*/
+				transform: skew(45deg,45deg);
+				transform: skew(60deg,60deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">旋转</div>
+		<div>Y旋转</div>
+		<div>X缩放</div>
+		<div>同时缩放</div>
+		<div>X偏移</div>
+		<div>X/Y同时偏移</div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

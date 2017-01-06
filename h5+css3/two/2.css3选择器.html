@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 50px auto;
+				text-align: center;
+			}
+			/*① 子代选择器*/
+			/*作用于后者元素，且存在很强的前后父子关系*/
+			/*但优先级同于后代选择器*/
+			div > p {
+				color: red;		
+			}
+			/*该选择器只能索引到body的一级子标签p*/
+			body > p {
+				color: blue;
+			}
+			
+			
+			/*② 相邻选择器 */
+			/*只作用于后者，且有很强的前后兄弟关系*/
+			div + span {
+				/*span变色*/
+				color: orange;
+			}
+			
+			
+			/*③ 兄弟选择器*/
+			/*只作用于后者，之间是兄弟关系即可(div 先于 span)*/
+			div ~ span {
+				/*两个span都变，只要有一个上级兄弟标签是div*/
+				color: cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div id="">123</div>
+			<p>abc</p>
+			<span>456</span>
+			<div>456</div>
+			<span>再见</span>
+		</div>
+	</body>
+</html>

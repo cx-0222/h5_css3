@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 50px auto;
+				text-align: center;
+				font-size: 30px;
+			}
+			/*三个皆变色*/
+			/*查找有title属性的div*/
+			div[title] {
+				color: aqua;	
+			}
+			/*查找属性值为div1的div标签*/
+			div[title="div1"] {
+				color: red;	
+			}
+			/*^= 表示查找属性值以什么开头的div标签，此处表示以d开头的，所以三个均变色*/
+			div[title ^="d"] {
+				color: yellow;	
+			}
+			
+			/*$= 表示查找属性值以什么结尾的div标签，此处表示以2结尾的，所以div2变色*/
+			div[title $= "2"] {
+				color: cornflowerblue;
+			}
+			/* div:not([title="div1"]) 表示除了title="div1"的标签，其他的都变色*/
+			div:not([title="div1"]) {
+				color: brown;
+			}
+			/*索引 不是第一个孩子元素 的 div标签才满足条件（两个条件① 不是第一个孩子元素  ② 是div标签）*/
+			div:not(:first-child]) {
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div title="div1">123</div>
+		<div title="div2">456</div>
+		<div title="div3">789</div>
+	</body>
+</html>

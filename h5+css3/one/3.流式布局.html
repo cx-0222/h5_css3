@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				position: relative;
+			}
+			.div1 {
+				background-color: red;
+				height: 50px;
+				/*流式布局  70%为父级标签的70%  body比屏幕宽度少16排序；*/
+				width: 70%;
+				margin: 0 auto;
+			}
+			
+			.div2
+			{
+				background-color: peru;
+				/*vw视图宽度 浏览器的百分之七十  view width*/
+				width:70vw ;
+				/*cm mm in 流式布局的长度单位*/
+				/*height: 50px;*/
+				/*vh视图高度 浏览器的百分之二十  view height*/
+				height: 20vh;
+				margin: 0 auto;
+			}
+			
+			
+			
+			.div3 {
+				background-color: blue;
+				width: 50vw;
+				height: 50vh;
+				margin-top: 25vh;
+				margin-left: 25vw;
+				
+
+			}
+			.div4 {
+				width: 50vw;
+				height: 50vh;
+				background-color: cyan;
+				position: absolute;
+				left: 25vw;
+				top: 25vh;
+			}
+		</style>
+	</head>
+	<body>
+	<!--1、静态布局：所有内容都是静态的，页面不能自己更新-->
+	<!--2、动态布局：页面可以根据相关条件（或是触发相关事件）来更新页面-->
+	<!--3、流式布局：页面内容不仅可以更新内容，且页面元素可以根据页面变化调整布局大小-->
+	<!--4、响应式布局：更系统化的运用动态布局和流式布局-->
+	
+		 <!--第一种流式布局-->
+		<!--<div class="div1"></div>-->
+		<!--第二种流式布局-->
+		<!--<div class="div2"></div>-->
+		
+		<!--<div class="div3"></div>-->
+		<div class="div4">11</div>
+	</body>
+</html>

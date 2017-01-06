@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				margin: 30px auto;
+				background-color: yellow;
+				font-size: 60px;
+				text-align: center;
+				line-height: 200px;	
+				/*font:粗细 字体大小/行高 字体*/
+				/*font: normal 60px/200px arial;*/
+			}
+			
+			/*一、双色渐变*/
+				/*1、线性渐变默认自上而下*/
+				/*2、刨除两端临界点，其余部分都属于渐变区域*/
+			div:nth-child(1) {
+				background: linear-gradient(red,yellow);
+			}
+			/*二、多色渐变*/
+				/*多色渐变，系统会根据渐变颜色的个数，合理平分渐变区域*/
+			div:nth-child(2) {
+				background: linear-gradient(red,yellow,green);
+			}
+			/*三、颜色加百分比*/
+				/*1、渐变区域属于30%~60% 之间*/
+				/*2、30%以上及60%以下，分别为纯红和纯黄*/
+				/*3、后者百分比数值应该大于等于前者百分比*/
+			div:nth-child(3) {
+				background: linear-gradient(red 30%,yellow 60%);	
+			}
+			/*四、多色百分比*/
+				/*渐变属于背景图片属性，原因是渐变通过渲染方式达到效果*/
+				/*1、渲染需要内存容量的支持，且会消耗cpu功效，实际开发过程中并不推荐使用*/
+			div:nth-child(4){
+				background-image: linear-gradient(red 30%,green 60%,yellow 90%);
+				background-image: linear-gradient(red 33%,green 33%,green 66%,yellow 66%);
+			}
+			/*五、方位加颜色*/
+				/**/
+				div:nth-child(5) {
+					/*浏览器适配！！！*/
+					background-image: linear-gradient(bottom,red,yellow);
+					/*Opera 苹果*/
+					background-image: -o-linear-gradient(bottom,red,yellow);
+					/*IE浏览器*/
+					background-image:-ms-linear-gradient(bottom,red,yellow) ;
+					/*火狐浏览器*/
+					background-image: -moz-linear-gradient(bottom,red,yellow);
+					/*谷歌浏览器*/
+					background-image: -webkit-linear-gradient(bottom,red,yellow);
+				}
+				/*bottom、left、right、top left、top right、bottom left、bottom right*/
+				/*45deg  45度角*/
+				div:nth-child(6) {
+					background-image: -webkit-linear-gradient(top left, red, yellow);
+					/*background-image: -webkit-linear-gradient(45deg, red, yellow);*/
+					background-image: -webkit-linear-gradient(30deg, red 50%, yellow 50%);
+				}
+				
+			/*六、到达方位加颜色*/
+				/**/
+				div:nth-child(7) {
+					background-image:linear-gradient(to left, red, yellow);
+					/*先找下面的，下面的不行再选择上面的*/
+					background-image: -webkit-linear-gradient(to left, red, yellow);	
+				}
+			/*七、重复渐变*/
+				/*1、重复渐变的百分比（用来平分所占的比重）写在最后一个颜色后面*/
+				/*2、之前的颜色后面可以设置百分比，但属于应该自由至左依次减小*/
+				div:nth-child(8) {
+					/*先将其分为五块，每块占20%，然后在每一块中进行相关渐变*/
+					background-image: -webkit-repeating-linear-gradient(left ,red, yellow 20%);	
+				}
+			/*八、重复渐变本质*/
+				div:nth-child(9) {
+					background-image: -webkit-linear-gradient(left ,red, yellow);
+					/*宽高值  宽每份百分之20 高每份百分之100*/	
+					background-size:20% 100%;
+					background-repeat: no-repeat;
+					
+				}
+		</style>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
+		<div>8</div>
+		<div>9</div>
+	</body>
+</html>

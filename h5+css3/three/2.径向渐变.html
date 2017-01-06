@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				margin: 30px auto;
+				background-color: yellow;
+				font-size: 60px;
+				text-align: center;
+				line-height: 200px;	
+				/*font:粗细 字体大小/行高 字体*/
+				/*font: normal 60px/200px arial;*/
+				border-radius: 50%;
+			}
+			div:nth-child(1) {
+				background-image: radial-gradient(red,yellow);
+			}
+			div:nth-child(2) {
+				background-image: radial-gradient(red 30%,yellow 60%);
+			}
+			div:nth-child(3) {
+				background-image: radial-gradient(red,yellow,green);
+				background-image:-webkit-radial-gradient(left,red,yellow,green);
+			}
+			div:nth-child(4) {
+				width: 400px;
+				background-image:-webkit-radial-gradient(left,red,yellow,green);
+			}
+			div:nth-child(5) {
+				/*以圆扩散，而不适应宽高*/
+				/*不写circle默认适应父级，如图4*/
+				width: 400px;
+				background-image:-webkit-radial-gradient(circle, red,yellow,green);
+			}
+			
+			div:nth-child(6) {
+				background-image:-webkit-repeating-radial-gradient(red,yellow 20%);
+			}
+		</style>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+	</body>
+</html>

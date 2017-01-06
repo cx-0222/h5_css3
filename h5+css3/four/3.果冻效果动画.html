@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>果冻</title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				border: 1px solid black;
+				margin: 200px auto;
+			}
+
+			div:hover {
+				/*动画名称  绑定动画*/
+				animation-name:animation;
+				/*动画持续时间*/
+				animation-duration:1s;
+				
+				/*动画运动曲线*/
+				animation-timing-function: linear;
+				
+				/*运动结束停留位置 forward终点  backwards起点*/
+				animation-fill-mode: backwards ;
+				/*无限循环*/
+				animation-iteration-count: 1;
+				/*动画是否反向播放 normal 正常，原起点为第一次运动的起点，且永远由起点向终点运动 alternate 来回运动（当只运动一次时，从后往前，但起点仍为原起点）alternate-reverse原终点变为第一次运动的起点*/
+				animation-direction: alternate;
+			}
+			
+			@keyframes animation {
+				0% {
+					transform: scale()
+				}
+				20% {
+					transform: scale(2);
+				}
+				40% {
+					transform: scale(0.25);
+				}
+				60% {
+					transform: scale(1.5);
+				}
+				80% {
+					transform: scale(0.75);
+				}
+				100% {
+					transform: scale();
+				}
+
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

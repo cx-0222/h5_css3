@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		body {
+			font-size: 30px;
+			
+		}
+		.div1 {
+			/*！！！！div1 中的字体大小为字体最小值12px  但该设置仍有效果，由子级可以看出*/
+			font-size: 7px;
+		}
+			span {
+				/*font-size: 30px;  不常用 px只对父级设置*/
+				/*html标签字体属性 默认16px */
+				/*em 实际取值取决于设置字体大小的最近父级元素*/
+				/*此时span的字体为14px  因为最近的父级为7px  所以它为14px*/
+				font-size: 2em;
+				
+				
+				
+				/*rem 只参考文档流层次（参考html标签字体属性）*/
+				font-size: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			<span>一串文字</span>
+		</div>
+	</body>
+</html>

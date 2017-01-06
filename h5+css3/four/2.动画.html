@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>五角星动画</title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				margin-top: 200px;
+				background-color: red;
+				border-radius: 50%;
+				
+			}
+			/*1、设置动画相关属性*/
+			div {
+				/*动画名称  绑定动画*/
+				animation-name:animation;
+				/*动画持续时间*/
+				animation-duration:2s;
+				/*动画延迟时间*/
+				animation-delay: 0.2s;
+				/*动画运动曲线*/
+				animation-timing-function: linear;
+				/*动画状态 running播放  pause暂停*/
+				animation-play-state: running; 
+				/*运动结束停留位置 forward终点  backwards起点*/
+				/*animation-fill-mode: forwards ;*/
+				/*动画次数  num(任意数字)次数  infinite无限*/
+				/*1.5次  表示运动3s  一次两秒  0.5次运动一半时间*/
+				animation-iteration-count: infinite;
+				/*动画是否反向播放 normal 正常，原起点为第一次运动的起点，且永远由起点向终点运动 alternate 来回运动（当只运动一次时，从后往前，但起点仍为原起点）alternate-reverse原终点变为第一次运动的起点*/
+				animation-direction: normal;
+			}
+			/*2、设置动画体：动画物体该如何运动*/
+			/*与绑定动画的相关属性进行匹配*/
+			@keyframes animation {
+				from{
+					/*from没写任何属性设置时，默认全部取初始值（初始状态）*/
+					margin-left: 0;
+				}
+				to {
+					margin-left: 1100px;
+				}
+			}
+
+			@keyframes animation {
+				/*0% {
+					margin-left: 0px;
+					margin-top: 200px;
+				}*/
+				20% {
+					margin-left: 600px;
+					margin-top: 200px;
+				}
+				40% {
+					margin-left: 150px;
+					margin-top: 600px;
+				}
+				60% {
+					margin-left: 300px;
+					margin-top: 0px;
+				}
+				80%{
+					margin-left: 450px;
+					margin-top: 600px;
+				}
+				/*100% {
+					margin-left: 0px;
+					margin-top: 200px;
+				}*/
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 30px auto;
+				text-align: center;
+				font-size: 30px;
+			}
+			
+		/*伪类选择器*/  
+		/*nth 第几个*/
+			/*①从头索引，从头第一个*/
+			p:nth-child(1) {
+				color: red;
+			}
+			/*②第一个*/
+			p:first-child {
+				color: orange;
+			}
+			/*③从尾索引，倒数第一个*/
+			p:nth-last-child(1) {
+				color: green;
+			}
+			/*④最后一个*/
+			p:last-child {
+				color: blue;
+			}
+			/*⑤*/
+
+			/*先查选择器类型，再确定位置*/
+			/*type指的是第二个p元素*/
+			p:nth-of-type(2) {
+				color: deeppink;
+			}
+			/*先确定位置，再匹配选择器(先确定所有的2 再去匹配)*/
+			/*nth-child指的是父级标签下的第二个子元素，但此时第二个不是p标签，所以此css样式语句无效*/
+			p:nth-child(2) {
+				color: greenyellow;
+			}
+			
+			/*⑥ */
+			p:first-of-type {
+				color: purple;
+			}
+			
+			
+		/*错误写法！！！！！*/
+		
+			/*h1~p:nth-child(1){
+				color: brown;
+			}*/
+			
+			/*在p前面*/
+			p:before {
+				content: "---";
+			}
+			
+			p:after {
+				content: "---";
+			}
+			/**/
+			p:after {
+				content: "";
+				display:block;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>123</p>
+			<h1>000</h1>
+			<p>456</p>
+			<p>789</p>
+		</div>
+		<p>111</p>
+	</body>
+</html>
